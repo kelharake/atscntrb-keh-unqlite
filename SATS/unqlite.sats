@@ -52,8 +52,8 @@ macdef UNQLITE_ABORT                = $extval(unqlite_return_value, "UNQLITE_ABO
 macdef UNQLITE_IOERR                = $extval(unqlite_return_value, "UNQLITE_IOERR")
 macdef UNQLITE_CORRUPT              = $extval(unqlite_return_value, "UNQLITE_CORRUPT")
 macdef UNQLITE_LOCKED               = $extval(unqlite_return_value, "UNQLITE_LOCKED")
-macdef UNQLITE_BUSY	                = $extval(unqlite_return_value, "UNQLITE_BUSY")
-macdef UNQLITE_DONE	                = $extval(unqlite_return_value, "UNQLITE_DONE")
+macdef UNQLITE_BUSY                 = $extval(unqlite_return_value, "UNQLITE_BUSY")
+macdef UNQLITE_DONE                 = $extval(unqlite_return_value, "UNQLITE_DONE")
 macdef UNQLITE_PERM                 = $extval(unqlite_return_value, "UNQLITE_PERM")
 macdef UNQLITE_NOTIMPLEMENTED       = $extval(unqlite_return_value, "UNQLITE_NOTIMPLEMENTED")
 macdef UNQLITE_NOTFOUND             = $extval(unqlite_return_value, "UNQLITE_NOTFOUND")
@@ -200,7 +200,7 @@ fun
   int
   = "mac#unqlite_kv_delete"
 
-// Document Store (JSON via Jx9) Interfaces	                                   
+// Document Store (JSON via Jx9) Interfaces                                     
 // =========================================================================== 
 fun
   unqlite_compile

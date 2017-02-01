@@ -1,20 +1,15 @@
 
-INCLUDE += -lunqlite
-INCLUDE += -lgc
+INCLUDE     += -lunqlite
+INCLUDE     += -lgc
 
-INCLUDE += -I $(PATSCONTRIB) 
-INCLUDE += -I ../..
+INCLUDE     += $(patsubst %,-I %,$(subst :, ,$(PATSHOMELOCS)))
+INCLUDE_ATS += $(patsubst %,-IATS %,$(subst :, ,$(PATSHOMELOCS)))
 
-INCLUDE += -IIATS $(PATSCONTRIB)
-INCLUDE += -IIATS ../..
-
+CC=gcc
 PATSCC=patscc
 PATSCC2=$(PATSCC) $(INCLUDE) $(INCLUDE_ATS)
 
-CC=gcc
-CXX=gcc
-
-all: test01.out 
+all: test01.out
 
 %.out: %.dats
 	$(PATSCC) -DATS_MEMALLOC_GCBDW $(INCLUDE) -o $@ $<
